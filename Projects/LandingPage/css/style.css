@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
+}
+
+/*Main stayling*/
+html,
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{font-size: 40px;}
+h2{font-size: 32px;}
+h3{font-size: 28px;}    
+h4{font-size: 24px;}    
+h5{font-size: 20px;}    
+h6{font-size: 16px;}     
+
+p{
+    font-size: 16px;
+    line-height: 1.7em;
+    margin: 10px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*Utility Clases*/
+
+.display-1{
+    font-size: 88px;
+    font-weight: 300px;
+
+}
+
+.display-2{
+    font-size: 50px;
+    font-weight: 300px;
+
+}
+
+.container{
+    margin: auto;
+    max-width: 1300px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+/*header*/
+#main-header{
+    background: url(../img/himalayan-adventure-header.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    padding-top: 160px;
+}
+
+#main-header .logo{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+#main-header h1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#main-header p{
+    width: 70%;
+    padding-bottom: 40px;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.email input {
+    margin: 0 5px;
+    width: 60%;
+}
+
+.btn{
+    background-color: #FFCA33;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    padding: 12px 23px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+/*Description*/
+#description{
+    padding-top: 120px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+#description h2{
+    padding-bottom: 20px;
+}
+
+.description-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.description-box{
+    width: 33%;
+    padding: 0px;
+}
+
+/*Testimonial*/
+#testimonial{
+    background: url(../img/testimonial.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+}
+
+#testimonial h4{
+    padding-bottom: 40px;
+}
+
+#testimonial img{
+    border-radius: 50%;
+    padding-bottom: 20px;
+}
+
+#testimonial p{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#testimonial .customer{
+    padding-top: 20px;
+}
+
+#feature{
+    background: #f9f9f9;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.features-box{
+    float: left;
+    width: 33%;
+    padding: 0px;
+}
+
+.features-box img{
+    width: 50%;
+}
+
+/* About */
+#about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.about-image{
+    float: left;
+    width: 48%;
+    margin: 5px;
+}
+
+.about-image img{
+    width: 100%;
+}
+
+.about-text{
+    float: right;
+    width: 48%;
+    margin: 0px 5px;
+}
+
+.about-text p{
+    padding-top: 10px;
+}
+
+/*Footer*/
+#mainfooter{
+    background: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+}
