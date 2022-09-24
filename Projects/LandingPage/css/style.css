@@ -36,7 +36,6 @@ a{
 .display-1{
     font-size: 88px;
     font-weight: 300px;
-
 }
 
 .display-2{
@@ -52,36 +51,73 @@ a{
     padding: 0 20px;
 }
 
+.jumbotron-class{
+    margin: 0%;
+    max-width: 100rem;
+    overflow: auto;
+    padding: 0 40px;
+}
+
 /*header*/
-#main-header{
-    background: url(../img/himalayan-adventure-header.jpeg);
+#jumbotron{
+    background: url(../img/JumbotronScrambler.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 60vh;
+    width: 150vw;
     color: white;
-    padding-top: 160px;
 }
 
-#main-header .logo{
-    font-size: 32px;
+#main-header {
+    background-color: whitesmoke;
+}
+
+.logo{
+    font-size: 1rem;
     text-transform: uppercase;
+    justify-content: flex-start;
+    flex-flow: column wrap;
 }
 
-#main-header h1{
-    padding-top: 20px;
-    padding-bottom: 20px;
+#jumbotron h1{
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
-#main-header p{
-    width: 70%;
-    padding-bottom: 40px;
+#jumbotron p{
+    width: 100%;
+    font-size: 30px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    gap: 2px;
+    padding: 0px;
+    list-style: none;
+}
+
+nav ul li {
+    border-bottom: 1px solid white;
+}
+
+nav ul li a, nav ul li a:link {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+    display: block;
+    width: 100%;
 }
 
 .email{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    padding-top: 8%;
 }
 
 .email input {
@@ -100,24 +136,24 @@ a{
     border-radius: 4px;
 }
 
-/*Description*/
-#description{
+/*Catálogo*/
+#catalogo{
     padding-top: 120px;
     padding-bottom: 100px;
     text-align: center;
 }
 
-#description h2{
+#catalogo h2{
     padding-bottom: 20px;
 }
 
-.description-row{
+.catalogo-row{
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
 }
 
-.description-box{
+.catalogo-box{
     width: 33%;
     padding: 0px;
 }
