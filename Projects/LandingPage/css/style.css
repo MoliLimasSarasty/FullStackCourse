@@ -160,12 +160,12 @@ nav ul li a, nav ul li a:link {
 
 /*Testimonial*/
 #testimonial{
-    background: url(../img/testimonial.jpeg);
+    background: url(../img/himalayan-adventure-header.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 150px;
     color: #fff;
     text-align: center;
     font-weight: 300;
@@ -183,6 +183,7 @@ nav ul li a, nav ul li a:link {
 #testimonial p{
     width: 70%;
     margin: 0 auto;
+    font-size: 30px;
 }
 
 #testimonial .customer{
