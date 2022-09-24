@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
+}
+
+/*Main stayling*/
+html,
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{font-size: 40px;}
+h2{font-size: 32px;}
+h3{font-size: 28px;}    
+h4{font-size: 24px;}    
+h5{font-size: 20px;}    
+h6{font-size: 16px;}     
+
+p{
+    font-size: 16px;
+    line-height: 1.7em;
+    margin: 10px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*Utility Clases*/
+
+.display-1{
+    font-size: 88px;
+    font-weight: 300px;
+}
+
+.display-2{
+    font-size: 50px;
+    font-weight: 300px;
+
+}
+
+.container{
+    margin: auto;
+    max-width: 1300px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.jumbotron-class{
+    margin: 0%;
+    max-width: 100rem;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+/*header*/
+#jumbotron{
+    background: url(../img/JumbotronScrambler.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 150vw;
+    color: white;
+}
+
+#main-header {
+    background-color: whitesmoke;
+}
+
+.logo{
+    font-size: 1rem;
+    text-transform: uppercase;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+}
+
+#jumbotron h1{
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+#jumbotron p{
+    width: 100%;
+    font-size: 30px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    gap: 2px;
+    padding: 0px;
+    list-style: none;
+}
+
+nav ul li {
+    border-bottom: 1px solid white;
+}
+
+nav ul li a, nav ul li a:link {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+    display: block;
+    width: 100%;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 8%;
+}
+
+.email input {
+    margin: 0 5px;
+    width: 60%;
+}
+
+.btn{
+    background-color: #FFCA33;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    padding: 12px 23px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+/*Catálogo*/
+#catalogo{
+    padding-top: 120px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+#catalogo h2{
+    padding-bottom: 20px;
+}
+
+.catalogo-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.catalogo-box{
+    width: 33%;
+    padding: 0px;
+}
+
+/*Testimonial*/
+#testimonial{
+    background: url(../img/himalayan-adventure-header.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 150px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+}
+
+#testimonial h4{
+    padding-bottom: 40px;
+}
+
+#testimonial img{
+    border-radius: 50%;
+    padding-bottom: 20px;
+}
+
+#testimonial p{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+#testimonial .customer{
+    padding-top: 20px;
+}
+
+#feature{
+    background: #f9f9f9;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.features-box{
+    float: left;
+    width: 33%;
+    padding: 0px;
+}
+
+.features-box img{
+    width: 50%;
+}
+
+/* About */
+#about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.about-image{
+    float: left;
+    width: 48%;
+    margin: 5px;
+}
+
+.about-image img{
+    width: 100%;
+}
+
+.about-text{
+    float: right;
+    width: 48%;
+    margin: 0px 5px;
+}
+
+.about-text p{
+    padding-top: 10px;
+}
+
+/*Footer*/
+#mainfooter{
+    background: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-basic {
+    padding:40px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+  
