@@ -52,10 +52,8 @@ a{
 }
 
 .jumbotron-class{
-    margin: 0%;
-    max-width: 100rem;
+    max-width: 100%;
     overflow: auto;
-    padding: 0 40px;
 }
 
 /*header*/
@@ -67,6 +65,7 @@ a{
     height: 60vh;
     width: 150vw;
     color: white;
+    padding: inherit;
 }
 
 #main-header {
@@ -117,7 +116,7 @@ nav ul li a, nav ul li a:link {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-top: 8%;
+    padding-top: 1%;
 }
 
 .email input {
@@ -298,5 +297,19 @@ nav ul li a, nav ul li a:link {
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+  }
+
+  @media (max-width: 800px) {
+    body {
+      font-size: 10px;
+    }
+    div, p, link {
+        font-size: 5px;
+        color: red;
+    }
+    .display-1,p {
+        font-size: 3em;
+        color: blue;
+    }
   }
   
