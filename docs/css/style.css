@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("fancyfonts.css") screen;
 
 
 /* Reset */
@@ -65,11 +66,10 @@ a{
     height: 60vh;
     width: 150vw;
     color: white;
-    padding: inherit;
 }
 
 #main-header {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .logo{
@@ -299,17 +299,17 @@ nav ul li a, nav ul li a:link {
     margin-bottom:0;
   }
 
-  @media (max-width: 800px) {
-    body {
-      font-size: 10px;
-    }
-    div, p, link {
-        font-size: 5px;
+  @media all and (max-width: 800px){
+    p {
         color: red;
     }
-    .display-1,p {
-        font-size: 3em;
-        color: blue;
+
+    .display-1, h1{
+        font-size: 2rem;
+    }
+
+    .catalogo-box{
+        width: 10%;
     }
   }
   
