@@ -1,8 +1,8 @@
 
 /**Funcion de capturar datos, almacenar y limpiar campos*/
-
-$(document).ready(function(){
-    $('#btnAgregar').click(function(){
+window.onload = function(){
+    var btnAgregar = document.getElementById('btnAgregar');
+    btnAgregar.addEventListener('click',function(){
         
         /**Captura de productos escrito en los inputs */
         var producto = document.getElementById("inputProducto").value;
@@ -18,4 +18,4 @@ $(document).ready(function(){
         document.getElementById("inputProducto").value = "";
         document.getElementById("inputCantidad").value = "";
     });
-});
+};
