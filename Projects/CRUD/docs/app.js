@@ -6,9 +6,7 @@ window.onload = function(){
         
         /**Captura de productos escrito en los inputs */
         var producto = document.getElementById("inputProducto").value;
-        console.log('producto',producto);
         var cantidad = document.getElementById("inputCantidad").value;
-        console.log('cantidad',cantidad);
 
         /**Guardando los datos en localstorage */
         localStorage.setItem("Producto", producto);
@@ -17,5 +15,26 @@ window.onload = function(){
         /**Limpiando los campos o inputs */
         document.getElementById("inputProducto").value = "";
         document.getElementById("inputCantidad").value = "";
+
+        /**Obtener datos almacenados */
+        var retProducto = localStorage.getItem("Producto");
+        var retCantidad = localStorage.getItem("Cantidad");
+
+        /**Mostrar datos almacenados */
+        document.getElementById("retProducto").innerHTML = retProducto;
+        document.getElementById("retCantidad").innerHTML = retCantidad;
+    });
+
+    var btnEditar = document.getElementById('btnEditar');
+    btnEditar.addEventListener('click',function(){
+        /**Obtener datos almacenados */
+        var editProducto = localStorage.getItem("Producto");
+        var editCantidad = localStorage.getItem("Cantidad");
+
+        /**Mostrar datos almacenados */
+        document.getElementById("inputProducto").value = editProducto;
+        document.getElementById("inputCantidad").value = editCantidad;
+        document.getElementById("btnAgregar").innerHTML = "Editar";
+    
     });
 };
