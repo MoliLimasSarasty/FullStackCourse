@@ -54,7 +54,7 @@ window.onload = function(){
         elimCantidad = localStorage.removeItem("Cantidad");
 
         /**Limpiando los campos */
-        document.getElementById("retProducto").value = "";
+        document.getElementById("retProducto").set
         document.getElementById("retCantidad").value = "";
     });
 };
