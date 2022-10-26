@@ -9,22 +9,33 @@ window.onload = function(){
         /**Captura de productos escritos en los inputs */
         var producto = document.getElementById("inputProducto").value;
         var cantidad = document.getElementById("inputCantidad").value;
-
+        
+        var itera = localStorage.length;
+        console.log("iteración "+itera);
+        
         /**Guardando los datos en localstorage */
-        localStorage.setItem("Producto", producto);
-        localStorage.setItem("Cantidad", cantidad);
+        localStorage.setItem("Producto"+itera, producto);
+        localStorage.setItem("Cantidad"+itera, cantidad);
 
         /**Limpiando los campos o inputs */
         document.getElementById("inputProducto").value = "";
         document.getElementById("inputCantidad").value = "";
 
         /**Obtener datos almacenados */
-        var retProducto = localStorage.getItem("Producto");
-        var retCantidad = localStorage.getItem("Cantidad");
+        var retProducto = localStorage.getItem("Producto"+itera);
+        var retCantidad = localStorage.getItem("Cantidad"+itera);
 
         /**Mostrar datos almacenados */
-        document.getElementById("retProducto").innerHTML = retProducto;
-        document.getElementById("retCantidad").innerHTML = retCantidad;
+        const row = `
+        <tr>
+            <td id="retProducto">${retProducto}</td>
+            <td id="retCantidad">${retCantidad}</td>
+            <td><button id="btnEditar">Editar</button></td>
+            <td><button id="btnBorrar">Borrar</button></td>
+            </tr>`
+
+        let tableElement = document.getElementById("lista");
+        tableElement.innerHTML += row;
     });
 
     /**Editar elementos almacenados */
@@ -57,4 +68,7 @@ window.onload = function(){
         document.getElementById("retProducto").set
         document.getElementById("retCantidad").value = "";
     });
+
+
+
 };
