@@ -3,79 +3,93 @@
 window.onload = function(){
 
     
-    /**Contador para iterar entre los elementos */
+    //Contador para iterar entre los elementos
     function iterador(){
         var itera = localStorage.length;
         return itera;
     }
 
-       /**Editar elementos almacenados */
-       function editarRegistro(){
-
-        let idx = iterador();
-        /**Obtener datos almacenados */
-        var editProducto = localStorage.getItem("Producto"+idx);
-        var editCantidad = localStorage.getItem("Cantidad"+idx);
-
-        /**Mostrar datos almacenados y cambiar label del boton mientras se edita */
-        document.getElementById("inputProducto").value = editProducto;
-        document.getElementById("inputCantidad").value = editCantidad;
-        /**document.getElementById("btnAgregar").innerHTML = "Editar";*/
-
-    };
+    function agregarLista(idx){
+         //Obtener datos almacenados
+         var retProducto = localStorage.getItem("Producto-"+idx);
+         var retCantidad = localStorage.getItem("Cantidad-"+idx);
+ 
+         //Mostrar datos almacenados
+         const row = `
+         <tr>
+             <td id="retProducto">${retProducto}</td>
+             <td id="retCantidad">${retCantidad}</td>
+             <td><button id="${idx}">Editar</button></td>
+             <td><button id="${idx}">Borrar</button></td>
+             </tr>`
+ 
+         let tableElement = document.getElementById("lista");
+         tableElement.innerHTML += row;
+    }
     
-    /**Funcion de capturar datos, almacenar y limpiar campos*/
+    //Funcion de capturar datos, almacenar y limpiar campos
     var btnAgregar = document.getElementById('btnAgregar');
     btnAgregar.addEventListener('click',function(){
         
-        /**Captura de productos escritos en los inputs */
+        //Captura de productos escritos en los inputs
         var producto = document.getElementById("inputProducto").value;
         var cantidad = document.getElementById("inputCantidad").value;
         
         let idx = iterador();
-        /**Guardando los datos en localstorage */
-        localStorage.setItem("Producto"+idx, producto);
-        localStorage.setItem("Cantidad"+idx, cantidad);
+        //Guardando los datos en localstorage
+        localStorage.setItem("Producto-"+idx, producto);
+        localStorage.setItem("Cantidad-"+idx, cantidad);
 
-        /**Limpiando los campos o inputs */
+        //Limpiando los campos o inputs
         document.getElementById("inputProducto").value = "";
         document.getElementById("inputCantidad").value = "";
 
-        /**Obtener datos almacenados */
-        var retProducto = localStorage.getItem("Producto"+idx);
-        var retCantidad = localStorage.getItem("Cantidad"+idx);
-
-        /**Mostrar datos almacenados */
-        const row = `
-        <tr>
-            <td id="retProducto">${retProducto}</td>
-            <td id="retCantidad">${retCantidad}</td>
-            <td><button id="btnEditar${idx}" onclick="editarRegistro()">Editar</button></td>
-            <td><button id="btnBorrar${idx}">Borrar</button></td>
-            </tr>`
-
-        let tableElement = document.getElementById("lista");
-        tableElement.innerHTML += row;
+        //llamar al metodo obtener datos almacenados
+        agregarLista(idx);
     });
 
- 
+    window.onclick = evento => {
+        console.log(evento.target.tagName,evento.target.innerText, evento.target.id);
+        let id = evento.target.id;
+        if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Editar'){
+            
+            //Obtener datos almacenados
+            var editProducto = localStorage.getItem("Producto-"+id);
+            var editCantidad = localStorage.getItem("Cantidad-"+id);
 
-    /**Eliminar elementos almacenados */
-    var btnEliminar = document.getElementById('btnBorrar');
-    btnEliminar.addEventListener('click',function(){
-        /**Obtener datos almacenados */
-        var elimProducto = localStorage.getItem("Producto");
-        var elimCantidad = localStorage.getItem("Cantidad");
+            //Mostrar datos almacenados y cambiar el botón a "Guardar"
+            document.getElementById("inputProducto").value = editProducto;
+            document.getElementById("inputCantidad").value = editCantidad;
+            document.getElementById(id).innerText = "Guardar";
 
-        /**Eliminar los valores */
-        elimProducto = localStorage.removeItem("Producto");
-        elimCantidad = localStorage.removeItem("Cantidad");
+        }else if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Guardar'){
+            localStorage.setItem("Producto-"+id,document.getElementById("inputProducto").value);
+            localStorage.setItem("Cantidad-"+id,document.getElementById("inputCantidad").value);
+            document.getElementById(id).innerText = "Editar";
+            
+            //Actualizar la lista en UI
+            let rows = Object.keys(localStorage);
+            let indices = new Set(rows.map(item => item.split('-')[1]));
+            indices.forEach(id => {
+                let row = `<tr>
+                <td id="retProducto">${localStorage.getItem("Producto-"+id)}</td>
+                <td id="retCantidad">${localStorage.getItem("Cantidad-"+id)}</td>
+                <td><button id="${id}">Editar</button></td>
+                <td><button id="${id}">Borrar</button></td>
+                </tr>`;
+                let tableElement = document.getElementById("lista");
+                tableElement.innerHTML += row;
+            });
 
-        /**Limpiando los campos */
-        document.getElementById("retProducto").set
-        document.getElementById("retCantidad").value = "";
-    });
 
 
+        }else if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Borrar'){
+            localStorage.removeItem("Producto"+id);
+            localStorage.removeItem("Cantidad"+id);
+            //Actualizar la lista en UI
+            
+        }
+    };
 
 };
+
