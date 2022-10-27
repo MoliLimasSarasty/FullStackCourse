@@ -80,11 +80,13 @@ window.onload = function(){
             document.getElementById("inputProducto").value = editProducto;
             document.getElementById("inputCantidad").value = editCantidad;
             document.getElementById(id).innerText = "Guardar";
+            document.getElementById('btnAgregar').disabled = true;
 
         }else if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Guardar'){
             localStorage.setItem("Producto-"+id,document.getElementById("inputProducto").value);
             localStorage.setItem("Cantidad-"+id,document.getElementById("inputCantidad").value);
             document.getElementById(id).innerText = "Editar";
+            document.getElementById('btnAgregar').disabled = false;
             limpiarCampos();
             
             //Actualizar la lista en UI
