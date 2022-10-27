@@ -2,11 +2,16 @@
 
 window.onload = function(){
 
-    
     //Contador para iterar entre los elementos
     function iterador(){
         var itera = localStorage.length;
         return itera;
+    }
+
+    function limpiarCampos(){
+        //Limpiando los campos o inputs
+        document.getElementById("inputProducto").value = "";
+        document.getElementById("inputCantidad").value = "";
     }
 
     function agregarLista(idx){
@@ -26,6 +31,22 @@ window.onload = function(){
          let tableElement = document.getElementById("lista");
          tableElement.innerHTML += row;
     }
+
+    function pintarLista (){
+        let rows = Object.keys(localStorage);
+            let row = "";
+            let indices = new Set(rows.map(item => item.split('-')[1]));
+            indices.forEach(id => {
+                row += `<tr>
+                <td id="retProducto">${localStorage.getItem("Producto-"+id)}</td>
+                <td id="retCantidad">${localStorage.getItem("Cantidad-"+id)}</td>
+                <td><button id="${id}">Editar</button></td>
+                <td><button id="${id}">Borrar</button></td>
+                </tr>`;
+            });
+            let tableElement = document.getElementById("lista");
+            tableElement.innerHTML = row;
+    };
     
     //Funcion de capturar datos, almacenar y limpiar campos
     var btnAgregar = document.getElementById('btnAgregar');
@@ -40,16 +61,14 @@ window.onload = function(){
         localStorage.setItem("Producto-"+idx, producto);
         localStorage.setItem("Cantidad-"+idx, cantidad);
 
-        //Limpiando los campos o inputs
-        document.getElementById("inputProducto").value = "";
-        document.getElementById("inputCantidad").value = "";
+        //Limpiar campos
+        limpiarCampos();
 
         //llamar al metodo obtener datos almacenados
         agregarLista(idx);
     });
 
     window.onclick = evento => {
-        console.log(evento.target.tagName,evento.target.innerText, evento.target.id);
         let id = evento.target.id;
         if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Editar'){
             
@@ -66,30 +85,20 @@ window.onload = function(){
             localStorage.setItem("Producto-"+id,document.getElementById("inputProducto").value);
             localStorage.setItem("Cantidad-"+id,document.getElementById("inputCantidad").value);
             document.getElementById(id).innerText = "Editar";
+            limpiarCampos();
             
             //Actualizar la lista en UI
-            let rows = Object.keys(localStorage);
-            let indices = new Set(rows.map(item => item.split('-')[1]));
-            indices.forEach(id => {
-                let row = `<tr>
-                <td id="retProducto">${localStorage.getItem("Producto-"+id)}</td>
-                <td id="retCantidad">${localStorage.getItem("Cantidad-"+id)}</td>
-                <td><button id="${id}">Editar</button></td>
-                <td><button id="${id}">Borrar</button></td>
-                </tr>`;
-                let tableElement = document.getElementById("lista");
-                tableElement.innerHTML += row;
-            });
-
-
+            pintarLista();
 
         }else if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Borrar'){
-            localStorage.removeItem("Producto"+id);
-            localStorage.removeItem("Cantidad"+id);
+            localStorage.removeItem("Producto-"+id);
+            localStorage.removeItem("Cantidad-"+id);
             //Actualizar la lista en UI
-            
+            pintarLista();
         }
     };
+
+    pintarLista();
 
 };
 
