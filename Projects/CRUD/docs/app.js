@@ -56,16 +56,22 @@ window.onload = function(){
         var producto = document.getElementById("inputProducto").value;
         var cantidad = document.getElementById("inputCantidad").value;
         
-        let idx = iterador();
-        //Guardando los datos en localstorage
-        localStorage.setItem("Producto-"+idx, producto);
-        localStorage.setItem("Cantidad-"+idx, cantidad);
+        //Validar que los campos producto y cantidad no estén vacíos
+        if(producto != "" && cantidad != ""){
+            let idx = iterador();
+            //Guardando los datos en localstorage
+            localStorage.setItem("Producto-"+idx, producto);
+            localStorage.setItem("Cantidad-"+idx, cantidad);
+    
+            //Limpiar campos
+            limpiarCampos();
+    
+            //llamar al metodo que pinta los resultados
+            agregarLista(idx);
+        }else{
+            window.alert("Por favor ingrese valores en los campos");
+        }
 
-        //Limpiar campos
-        limpiarCampos();
-
-        //llamar al metodo obtener datos almacenados
-        agregarLista(idx);
     });
 
     window.onclick = evento => {
@@ -95,12 +101,12 @@ window.onload = function(){
         }else if(evento.target.tagName === 'BUTTON' && evento.target.innerText === 'Borrar'){
             localStorage.removeItem("Producto-"+id);
             localStorage.removeItem("Cantidad-"+id);
+            document.getElementById('btnAgregar').enabled = true;
+            
             //Actualizar la lista en UI
             pintarLista();
         }
     };
-
-    pintarLista();
 
 };
 
